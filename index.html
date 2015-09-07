@@ -1,15 +1,18 @@
 <!doctype html>
 <html ng-app = "todo" >
   <head>
-    <title>My Angular App</title>
+    <title>Angular To-Do List</title>
     <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js" ></script>
     <script src = "app.js" ></script>
   </head>
   <body ng-controller = "TodoCtrl" >
 
-    <h1>TODO in Angular.js</h1>
+    <h1>The Angular To-Do List</h1>
 
-    <h2>New TODO Item</h2>
+
+
+    <h2>New Item</h2>
+
     <form id = "new-todo" >
       <input type = "text" name = "text" ng-model = "item.text">
       <input type = "date" name = "due-date" ng-model = "item.dueDate">
@@ -19,19 +22,22 @@
     </form>
 
 
+
+    <h2>Filters</h2>
+
     <button ng-click = "toggleCompleted()" ng-model = "hideCompleted">
       {{ hideCompleted ? "Show" : "Hide" }} Completed
     </button>
-    {{ hideCompleted }}
 
     <button ng-click = "destroyCompleted()">
       Clear Completed
     </button>
 
 
-    <h2>Existing To-Dos</h2>
-    <table>
 
+    <h2>Existing Items</h2>
+
+    <table>
       <thead>
         <tr>
           <th>Item</th>
@@ -42,6 +48,9 @@
       </thead>
 
       <tbody>
+
+        <!-- use an `ng-repeat` to perform all the magic -->
+        <!-- plus add a custom filter to hide completed items -->
         <tr ng-repeat = "item in items | filterCompleted:hideCompleted">
           <td>{{ item.text }}</td>
           <td>{{ item.dueDate | date }}</td>
