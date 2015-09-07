@@ -1,0 +1,22 @@
+<!doctype html>
+<html ng-app = "todo" >
+  <head>
+    <title>My Angular App</title>
+    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js" ></script>
+    <script src = "app.js" ></script>
+  </head>
+  <body ng-controller = "TodoCtrl" >
+
+    <h1>TODO in Angular.js</h1>
+
+    <todo-item item="todoItem"></todo-item>
+
+
+    <!-- Angular Controllers -->
+    <script src = "controllers/todo_controller.js" ></script>
+
+    <!-- Angular Directives -->
+    <script src = "directives/todo_item.js" ></script>
+
+  </body>
+</html>
