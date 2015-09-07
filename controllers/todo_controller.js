@@ -47,6 +47,16 @@ todo.controller("TodoCtrl",
       console.log("hideCompleted: " + $scope.hideCompleted)
     }
 
+
+    $scope.destroyCompleted = function(){
+      var newItems = []
+      $scope.items.forEach(function(item){
+        if( !item.completed ){
+          newItems.push( item )
+        }
+      })
+      $scope.items = newItems;
+    }
     // $scope.toggleCompleted = function( item ){
     //   $window.console.log(item);
     //   $window.console.log( "toggling completed: " + item.completed );
