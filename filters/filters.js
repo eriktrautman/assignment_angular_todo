@@ -1,8 +1,6 @@
 todo.filter('filterCompleted', function() {
 
   return function( collection, hideCompleted ) {
-
-    console.log("HASHAS");
     
     var filteredCollection = []
 

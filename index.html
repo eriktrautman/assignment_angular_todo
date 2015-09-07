@@ -51,13 +51,7 @@
 
         <!-- use an `ng-repeat` to perform all the magic -->
         <!-- plus add a custom filter to hide completed items -->
-        <tr ng-repeat = "item in items | filterCompleted:hideCompleted">
-          <td>{{ item.text }}</td>
-          <td>{{ item.dueDate | date }}</td>
-          <td>
-            <input type = "checkbox" name = "completed" ng-model = "item.completed">
-          </td>
-          <td ng-click = "removeItem( item )" >X</td>
+        <tr ng-repeat = "item in items | filterCompleted:hideCompleted" todo-item item = "item">
         </tr>
       </tbody>
 

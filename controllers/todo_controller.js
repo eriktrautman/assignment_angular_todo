@@ -47,6 +47,7 @@ todo.controller("TodoCtrl",
     // Remove an item from our collection
     //   by finding and splicing it out
     $scope.removeItem = function( item ){
+      console.log( "Destroying item: " + item );
       var index = $scope.items.indexOf( item );
       $scope.items.splice( index, 1 );
     }

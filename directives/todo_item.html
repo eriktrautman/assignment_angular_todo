@@ -1,3 +1,6 @@
-<td ng-click = "test()">{{ item.text }}</td>
-<td ng-click = "test()">{{ item.dueDate | date }}</td>
-<td><input type = "checkbox" name = "completed" ng-model = "item.completed" ng-change = "test()"></td>
+<td>{{ item.text }}</td>
+<td>{{ item.dueDate | date }}</td>
+<td>
+  <input type = "checkbox" name = "completed" ng-model = "item.completed">
+</td>
+<td ng-click = "removeItem( item )" >X</td>
