@@ -1,11 +1,13 @@
 todo.controller("TodoCtrl",
   ['$scope', function($scope){
 
-    $scope.todo_item = { 
+    $scope.todoItem = { 
       text: "Get groceries from the store",
       dueDate: new Date(),
       completed: false 
     }
+
+    $scope.items = [ $scope.todoItem ]
 
 
   }]

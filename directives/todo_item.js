@@ -1,7 +1,7 @@
-todo.directive('todoItem', function(){
+todo.directive('todoitem', function(){
   return {
     templateUrl: "directives/todo_item.html",
-    restrict: "E",
+    restrict: "A",
     scope: {
         item: "="
     }
