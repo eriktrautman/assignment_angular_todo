@@ -9,19 +9,42 @@
 
     <h1>TODO in Angular.js</h1>
 
+    <h2>New TODO Item</h2>
+    <form id = "new-todo" >
+      <input type = "text" name = "text" ng-model = "item.text">
+      <input type = "date" name = "due-date" ng-model = "item.dueDate">
+      <button ng-click = "addItem()">
+        Create TO-DO!
+      </button>
+    </form>
 
+
+    <button ng-click = "toggleCompleted()" ng-model = "hideCompleted">
+      {{ hideCompleted ? "Show" : "Hide" }} Completed
+    </button>
+    {{ hideCompleted }}
+
+
+    <h2>Existing To-Dos</h2>
     <table>
 
       <thead>
         <tr>
           <th>Item</th>
           <th>Due Date</th>
-          <th>Completed?</th>
+          <th>Finish</th>
+          <th>Delete</th>
         </tr>
       </thead>
 
       <tbody>
-        <tr todoitem item="todoItem">
+        <tr ng-repeat = "item in items | filterCompleted:hideCompleted">
+          <td>{{ item.text }}</td>
+          <td>{{ item.dueDate | date }}</td>
+          <td>
+            <input type = "checkbox" name = "completed" ng-model = "item.completed">
+          </td>
+          <td ng-click = "removeItem( item )" >X</td>
         </tr>
       </tbody>
 
@@ -33,6 +56,12 @@
 
     <!-- Angular Directives -->
     <script src = "directives/todo_item.js" ></script>
+
+    <!-- Angular Services -->
+    <script src = "services/todo_crud.js" ></script>
+
+    <!-- Angular Filters -->
+    <script src = "filters/filters.js" ></script>    
 
   </body>
 </html>
