@@ -1,3 +1,5 @@
-# The API Front End
+# assignment_angular_todo
+Do it!
 
-[Using what you've learned about Angular.js routes and services to create a modular app that hits a RESTful API.](http://www.vikingcodeschool.com)
+[An AngularJS JavaScript app from the Viking Code School involving CRUD actions, custom directives, custom services, custom filters and all the usual goodness](http://www.vikingcodeschool.com)
+>>>>>>> b67216c525423d9ee14430c57f62667cf4b20615
